@@ -4,7 +4,7 @@ package designPattern.iterator;
  * Created by pc on 2017/1/5.
  */
 public class DinnerArrayMenu {
-    private static int maxNum = 3;
+    private static final int maxNum = 3;
     private int num = 0;
     private Food[] foods;
 
@@ -17,9 +17,13 @@ public class DinnerArrayMenu {
 
     public void addFood(String name,String price){
         if(num > maxNum-1){
-            System.out.println("");
+            System.out.println("out of range");
         }
         foods[num] = new Food(name,price);
         num ++;
+    }
+
+    public DinnerArrayIterator createArrayIterator() {
+        return new DinnerArrayIterator(foods);
     }
 }
