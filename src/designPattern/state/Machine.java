@@ -11,13 +11,13 @@ public class Machine {
     private NoHas noHas;
     private Has has;
     private Give give;
-    private NoSweet noSweet;
+    private Saleout noSweet;
 
     public Machine(int count){
         this.noHas = new NoHas(this);
         this.has = new Has(this);
         this.give = new Give(this);
-        this.noSweet = new NoSweet(this);
+        this.noSweet = new Saleout(this);
         this.state = noHas;
         this.count = count;
     }
@@ -79,11 +79,11 @@ public class Machine {
         this.give = give;
     }
 
-    public NoSweet getNoSweet() {
+    public Saleout getNoSweet() {
         return noSweet;
     }
 
-    public void setNoSweet(NoSweet noSweet) {
+    public void setNoSweet(Saleout noSweet) {
         this.noSweet = noSweet;
     }
 
