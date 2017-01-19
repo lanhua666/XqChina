@@ -4,7 +4,7 @@ package designPattern.state;
  * Created by pc on 2017/1/13.
  */
 public class Saleout implements State {
-    Machine machine;
+    transient Machine machine;
 
     public Saleout(Machine machine){
         this.machine = machine;

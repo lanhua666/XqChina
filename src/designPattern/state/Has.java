@@ -5,7 +5,7 @@ package designPattern.state;
  */
 public class Has implements State {
 
-    Machine machine;
+    transient Machine machine;
 
     public Has(Machine machine){
         this.machine = machine;

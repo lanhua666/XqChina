@@ -3,10 +3,10 @@ package designPattern.state;
 /**
  * Created by pc on 2017/1/13.
  */
-//没有硬币的状态
+//
 public class NoHas implements State {
 
-    Machine machine;
+    transient Machine machine;
 
     public NoHas(Machine machine){
         this.machine = machine;

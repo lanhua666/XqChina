@@ -1,9 +1,14 @@
 package designPattern.state;
 
+import designPattern.proxy.RemoteServer;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
 /**
  * Created by pc on 2017/1/12.
  */
-public class Machine {
+public class Machine extends UnicastRemoteObject implements RemoteServer{
 
     private int count;
     private State state;
@@ -13,7 +18,7 @@ public class Machine {
     private Give give;
     private Saleout noSweet;
 
-    public Machine(int count){
+    public Machine(int count) throws RemoteException{
         this.noHas = new NoHas(this);
         this.has = new Has(this);
         this.give = new Give(this);
@@ -22,19 +27,19 @@ public class Machine {
         this.count = count;
     }
 
-    //转动曲柄
+    //
     public void turnCrank(){
         state.turnCrank();
     }
-    //插入硬币
+    //
     public void insert(){
         state.insert();
     }
-    //退回硬币
+    //
     public void back(){
         state.back();
     }
-    //发放糖果
+    //
     public void give(){
         state.give();
     }
